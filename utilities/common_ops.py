@@ -1,5 +1,6 @@
 import time
-
+import random
+import string
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import test_cases.conftest as conf
@@ -22,7 +23,6 @@ def wait(for_element, elem):
         WebDriverWait(conf.driver, int(get_data('WaitTime'))).until(
             EC.visibility_of_element_located((elem[0], elem[1])))
 
-
 class For:
     ELEMENT_EXISTS = 'element_exists'
     ELEMENT_DISPLAYED = 'element_displayed'
@@ -30,3 +30,7 @@ class For:
 
 def get_time_stamp():
     return time.time()
+
+
+def generate_random_string(length):
+    return ''.join(random.choices(string.ascii_letters + string.digits, k=length))

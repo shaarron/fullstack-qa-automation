@@ -1,7 +1,7 @@
 import allure
 from workflows.api_flows import ApiFlows
-from extensions.data_generation import DataGeneration
 from extensions.verifications import Verifications as Verify
+from utilities.common_ops import generate_random_string
 
 
 class TestAPI:
@@ -9,7 +9,7 @@ class TestAPI:
     @allure.title('Test 01: successful registration test')
     @allure.description('positive flow - check registration sanity works')
     def test01_registration_success(self):
-        random_email = DataGeneration.generate_random_string(10)
+        random_email = generate_random_string(10)
         response = ApiFlows.user_creation(
             email=f"{random_email}@gmail.com",
             password="12345678",
@@ -23,7 +23,7 @@ class TestAPI:
     @allure.title('Test 02: email already registered')
     @allure.description('negative flow - check registration attempt with the same email')
     def test02_registration_success(self):
-        random_email = DataGeneration.generate_random_string(10)
+        random_email = generate_random_string(10)
         test_email = f"{random_email}@gmail.com"
 
         first_creation_response = ApiFlows.user_creation(

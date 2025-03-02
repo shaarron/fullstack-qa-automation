@@ -173,3 +173,5 @@ cython_debug/
 # Allure
 allure-results/
 allure-screenshots/
+
+.idea
