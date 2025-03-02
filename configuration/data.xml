@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Environment>
+    <!-- General -->
+    <WaitTime>5</WaitTime>
+    <ScreenshotPath>./allure-screenshots</ScreenshotPath>
+
+    <!-- Web -->
+    <Browser>Chrome</Browser>
+    <Url>https://airbnb.com/</Url>
+
+</Environment>
