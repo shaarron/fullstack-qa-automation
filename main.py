@@ -29,5 +29,5 @@ if __name__ == "__main__":
         print(f"❌ Some tests FAILED. Exit code: {exit_code}")
 
     print("📊 Generating Allure Report...")
-    print("📌 Allure Report generated successfully! Run `allure open allure-report` to view.")
+    print("📌 Allure Report generated successfully! Run `allure serve allure-results` to view.")
     sys.exit(exit_code)
