@@ -1,28 +1,24 @@
 
 # Fullstack QA Automation
-
+* **
 
 ## Overview
 
-### **Overview**  
-
 This project demonstrates a complete test flow covering both **UI and API testing**, using **Python, Pytest, Allure, Selenium, and Requests**.<br>
 Following industry best practices and standards.<br>
-The **UI tests** focus on verifying Airbnb's search functionality, while the **API tests** validate user registration in **JuiceShop by OWASP**.
-
-
-
+The **UI tests** focus on verifying [**Airbnb's**](https://www.airbnb.com/) search functionality, while the **API tests** validate user registration in [**JuiceShop by OWASP**](https://juice-shop.herokuapp.com/#/).
+* **
 
 ## Table of Contents
+
 * [Running Locally](#running-locally)
 * [Architecture](#architecture)
   * [Project Structure Diagram](#project-structure-diagram)
   * [Repository Structure](#repository-structure)
 * [Test Plan](#test-plan)
 
+* **
 # Running Locally
-
-* ** 
 
 ## Prerequisites
 
