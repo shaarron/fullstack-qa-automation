@@ -38,13 +38,10 @@ class WebFlows:
 
     @staticmethod
     @allure.step('get the available categories names')
-    def locate_stays_categories():
-        categories_list = ['Beachfront', 'Rooms', 'Amazing pools', 'OMG!', 'National parks', 'Tiny homes', 'Mansions',
-                           'Amazing views', 'Luxe', 'Lakefront', 'Cabins', 'Castles', 'Trending', 'Design',
-                           'Countryside', 'Tropical', 'Boats', 'Farms', 'Islands', 'Camping', 'New']
+    def locate_stays_categories(categories_list):
         located_elements = []
         for category in categories_list:
-            elem = page.web_stays_categories.get_dynamic_catgory(category)
+            elem = page.web_stays_categories.get_dynamic_category(category)
             located_elements.append(elem)
         return located_elements
 
@@ -78,7 +75,7 @@ class WebFlows:
     @staticmethod
     @allure.step('refresh - to reset the page')
     def refresh_page():
-        conftest.driver.refresh()
+        UiActions.refresh_page()
 
     @staticmethod
     @allure.step('add guests')

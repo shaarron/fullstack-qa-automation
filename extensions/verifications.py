@@ -12,22 +12,20 @@ class Verifications:
     @staticmethod
     @allure.step('verify contains')
     def verify_contains(actual, expected):
-        assert expected in actual , 'Verify Contains Failed, actual: ' + str(
+        assert expected in actual, 'Verify Contains Failed, actual: ' + str(
             actual) + ' is not contains the expected: ' + str(expected)
 
     @staticmethod
     @allure.step('verify element is displayed')
-    def is_displayed(elem: WebElement):
-        assert elem.is_displayed(), f'Verify is Displayed failed, element: {elem.text} is not displayed'
+    def verify_element_displayed(elem: WebElement):
+        assert elem.is_displayed(), f'Verify Is Displayed Failed, element: {elem.text} is not displayed'
 
     @staticmethod
-    @allure.step('soft verification (assert) of elements using my implementation')
-    def soft_displayed(elems):
+    @allure.step('verify elements are displayed')
+    def verify_elements_displayed(elems):
         failed_elems = []
-        for i in range(len(elems)):
-            if not elems[i].is_displayed():
-                failed_elems.insert(len(failed_elems), elems[i].text)
+        for elem in elems:
+            if not elem.is_displayed():
+                failed_elems.append(elem.text)
         if len(failed_elems) > 0:
-            for failed_elem in failed_elems:
-                print('Soft Displayed Failed, elements which are failed: ' + str(failed_elem))
-            raise AssertionError('Soft displayed failed')
+            raise AssertionError(f"Verify is display failed for elements {str(failed_elems)}")
