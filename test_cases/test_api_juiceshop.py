@@ -33,6 +33,8 @@ class TestAPI:
             security_question="Mother's maiden name?",
             security_answer="some random name"
         )
+        # Ensure the user is created first; the second request tests duplicate registration.
+        Verify.verify_equals(first_creation_response.status_code, 201)
 
         second_creation_response = ApiFlows.user_creation(
             email=test_email,
@@ -42,5 +44,5 @@ class TestAPI:
             security_answer="some random name"
         )
 
-        Verify.verify_equals(first_creation_response.status_code, 201)
         Verify.verify_equals(second_creation_response.status_code, 400)
+

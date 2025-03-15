@@ -1,6 +1,9 @@
 import allure
 from selenium.webdriver.remote.webelement import WebElement
 
+from test_cases import conftest
+
+
 class UiActions:
 
     @staticmethod
@@ -12,3 +15,8 @@ class UiActions:
     @allure.step('updating text')
     def update_text(elem: WebElement, value: str):
         elem.send_keys(value)
+
+    @staticmethod
+    @allure.step('refresh page')
+    def refresh_page():
+        conftest.driver.refresh()
