@@ -7,6 +7,11 @@ This project demonstrates a complete test flow covering both **UI and API testin
 Following industry best practices and standards.<br>
 The **UI tests** focus on verifying [**Airbnb's**](https://www.airbnb.com/) search functionality, while the **API tests** validate user registration in [**JuiceShop by OWASP**](https://juice-shop.herokuapp.com/#/).
 
+#### Airbnb UI - Test Run Demo
+
+<img src="./airbnb_demo.gif" width="700">
+
+
 
 ## Table of Contents
 
